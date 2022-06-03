@@ -41,7 +41,8 @@ app.get('/api/:name', (request,response) => {
 
 
 //tell it where to listen and what to do. 
-app.listen(PORT, () => {
+// by using the process environment variable we are saying to try to use whatever Heroku is setting up as the PORT
+app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is now running on port ${PORT}!`)
 }) 
 
